@@ -1,10 +1,15 @@
-def insertionSort(lista):
+def insertion_sort(lista: list) -> list:
     for i in range(1, len(lista)):
-        j = i-1
-        prox_elemento = lista[i]
+        item = lista[i]
+        j = i - 1
 
-        while (lista[j] > prox_elemento) and (j >= 0):
+        while j >= 0 and item < lista[j]:
             lista[j+1] = lista[j]
-            j = j-1
-            lista[j+1] = prox_elemento
+            j -= 1
+
+        lista[j+1] = item
+
     return lista
+
+
+print(insertion_sort([9, 8, 7, 4, 3, 1, 6, 2, 2, 5, 2, 0, 5]))
